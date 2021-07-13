@@ -1,0 +1,27 @@
+.fish_tank_container{
+    display: flex;
+    margin-top: 5em;
+}
+.fish{
+    
+    display: flex;
+    flex-wrap: wrap;
+    flex: 3 70%;
+    /* border: brown 10px solid; */
+    max-height: 34rem;
+    overflow: scroll;
+    
+}
+.card{
+    margin: .5em .5em;
+}
+.tanktips{
+    /* border: black 10px solid ; */
+    padding-left: 1rem;
+    overflow: scroll;
+    flex-basis: 30%;
+    max-height: 34rem;
+}
+.tanktips_heading{
+    text-decoration: underline;
+}

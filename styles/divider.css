@@ -1,0 +1,14 @@
+.divider{
+    background-image: url("../images/divider.jpg");
+    background-position: center;
+    height: 15em;
+    margin-top: 1em;
+    opacity: .80;
+}
+.divider h2{
+    font-weight: bolder;
+    font-size: 400%;
+    text-align: center;
+    padding-top: 1em;
+    
+}

@@ -1,0 +1,36 @@
+@import "fishcontainer.css";
+@import "quotescontainer.css";
+@import "divider.css";
+body{
+    /* background-color: aquamarine!important; */
+    margin: 0;
+    font-family: 'Open Sans', sans-serif!important;
+}
+
+header{
+    /* border: pink 10px solid; */
+    height: 12vh;
+    position: relative;
+    background-image:url("../images/ocean_banner.jpeg");
+    background-position: bottom;
+    opacity: .80;
+}
+
+
+header h1{
+    color: white;
+    text-align: center;
+    padding-top: .6em;
+    opacity: 1;
+    font-weight: 700;
+}
+
+
+footer{
+    border: rgb(188, 183, 183) 10px solid;
+    border-left: none;
+    border-right: none;
+    text-align: center;
+    padding-top: .2em;
+    padding-bottom: .2em;
+}
