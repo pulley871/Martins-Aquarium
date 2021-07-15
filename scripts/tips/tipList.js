@@ -25,7 +25,7 @@ export const tipList = () => {
 
     return htmlString
 }
-const parentHTMLElement = document.querySelector(".tanktips")
+const parentHTMLElement = document.querySelector(".tipsContainer")
 
 
 parentHTMLElement.innerHTML = tipList()

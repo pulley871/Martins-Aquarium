@@ -89,7 +89,17 @@ const database = {
             diet: "Kelp",
             
 
-        }
+        },
+        {
+            image: "../images/green_fish.jpeg", 
+            name: "Pulley",
+            species: "Intense",
+            length: 3,
+            location: "USA",
+            diet: "People",
+            
+
+        },
     ],
     tips: [
         {
@@ -112,6 +122,28 @@ const database = {
             tipTitle:"Water Temperture"
         },
         
+    ],
+    places: [
+        {
+            countryName:"Japan",
+            fishHarvested: [],
+            countryimage: "images/japan_beach.jpeg"
+        },
+        {
+            countryName:"Argentina",
+            fishHarvested:[],
+            countryimage: "images/japan_beach.jpeg"
+        },
+        {
+            countryName:"Brazil",
+            fishHarvested: [],
+            countryimage: "images/japan_beach.jpeg"
+        },
+        {
+            countryName:"USA",
+            fishHarvested: [],
+            countryimage: "images/japan_beach.jpeg"
+        }
     ]
 }
 // Exports the array of Fish objects
@@ -122,53 +154,71 @@ export const getFish = () => {
 export const getTips = () => {
     return database.tips.map(tips => ({...tips}))
 }
+// Exports the array of Places
+export const getPlaces = () => {
+    return database.places.map(places => ({...places}))
+}
 // Checks if the fish length is divisible by 3 and returns array of only holy fish
-export const mostHolyFish = () => {
-    // 3, 6, 9, 12, etc... fish
-    const holyFish = []
+// export const mostHolyFish = () => {
+//     // 3, 6, 9, 12, etc... fish
+//     const holyFish = []
 
-    for (const fish of database.fish) {
-        if (fish.length % 3 === 0){
-            holyFish.push(fish)
-        }
-    }
+//     for (const fish of database.fish) {
+//         if (fish.length % 3 === 0){
+//             holyFish.push(fish)
+//         }
+//     }
 
-    return holyFish
-}
-// Checks if the fish length is divisible by 5 and returns array of only soldier fish
-export const soldierFish = () => {
-    // 5, 10, 15, 20, 25, etc... fish
-    const soldiers = []
+//     return holyFish
+// }
+// // Checks if the fish length is divisible by 5 and returns array of only soldier fish
+// export const soldierFish = () => {
+//     // 5, 10, 15, 20, 25, etc... fish
+//     const soldiers = []
 
-    for (const fish of database.fish) {
-        if (fish.length % 5 === 0){
-            soldiers.push(fish)
-        }
-    }
+//     for (const fish of database.fish) {
+//         if (fish.length % 5 === 0){
+//             soldiers.push(fish)
+//         }
+//     }
 
-    return soldiers
-}
-// Checks if the fish length is not divisible by 3 or 5 and returns array of nonHolyFish
-export const nonHolyFish = () => {
-    // Any fish not a multiple of 3 or 5
-    const regularFish = []
+//     return soldiers
+// }
+// // Checks if the fish length is not divisible by 3 or 5 and returns array of nonHolyFish
+// export const nonHolyFish = () => {
+//     // Any fish not a multiple of 3 or 5
+//     const regularFish = []
 
-    for (const fish of database.fish) {
-        if (fish.length % 3 !== 0 && fish.length % 5 !== 0){
-            regularFish.push(fish)
-        }
-    }
+//     for (const fish of database.fish) {
+//         if (fish.length % 3 !== 0 && fish.length % 5 !== 0){
+//             regularFish.push(fish)
+//         }
+//     }
 
-    return regularFish
-}
+//     return regularFish
+// }
 // Mereges the 3 types of fish arrays in order from holy -> soldier -> nonHoly and spreads them into one array of objects
 export const fishArragned = () =>{
+    const holyFish = [];
+    const soldierFish = [];
+    const nonHolyFish = [];
+    for (const fish of database.fish){
+        if (fish.length % 3 == 0){
+            holyFish.push(fish);
+        }else if (fish.length % 5 == 0){
+            soldierFish.push(fish);
+        }else{
+            nonHolyFish.push(fish);
+        }
+    }
+    
     const finalFishArr = [];
-    finalFishArr.push(...mostHolyFish());
-    finalFishArr.push(...soldierFish());
-    finalFishArr.push(...nonHolyFish());
+    finalFishArr.push(...holyFish);
+    finalFishArr.push(...soldierFish);
+    finalFishArr.push(...nonHolyFish);
     
 
     return finalFishArr;
 }
 console.log(fishArragned())
+
